@@ -44,6 +44,29 @@
     color: #000;
 }
 
+
+
+.last-message {
+    padding: 0 40px 120px;
+    text-align: center;
+    background-image: url('../img/bg-last-message.svg');
+    background-repeat: no-repeat;
+    background-position: center top;
+}
+
+.last-message__title {
+    font-weight: 700;
+    text-align: center;
+    font-size: 32px;
+    line-height: 120%;
+    font-family: "gg sans", "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin-bottom: 40px;
+}
+
+.last-message__button {
+    margin: 0 auto;
+}
+
 @media screen and (max-width:768px) {
     .sections-wrapper {
         grid-template-columns: 1fr;
@@ -52,5 +75,9 @@
 
     .sections-wrapper.sections-wrapper--footer {
         padding: 30px 0;
+    }
+
+    .last-message__button {
+        width: 100%;
     }
 }
