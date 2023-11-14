@@ -112,7 +112,7 @@
                         <li><a class="navbar-mobile__item" href="#">Careers</a></li>
                     </ul>
                 </div>
-                <button class="navbar-mobile__close">
+                <a href="#" class="navbar-mobile__close">
                     <svg class="closeIcon-3Cx1EL" width="24" height="24" viewBox="0 0 12 12">
                         <g fill="none" fill-rule="evenodd" aria-hidden="true">
                             <path d="M0 0h12v12H0"></path>
@@ -121,9 +121,9 @@
                             </path>
                         </g>
                     </svg>
-                </button>
+                </a>
                 <div class="navbar-mobile__footer">
-                    <button class="navbar-mobile__button button button--blue">
+                    <button class="navbar-mobile__button button button--blue download">
                         <svg width="24" height="24" viewBox="0 0 24 24" class="icon-2tQ9Jt">
                             <g fill="white">
                                 <path
@@ -134,7 +134,7 @@
                                 </path>
                             </g>
                         </svg>
-                        <span>Download for Linux</span>
+                        <span>Download for </span> <!-- provide it through js -->
                     </button>
                 </div>
             </nav>
@@ -148,7 +148,8 @@
                     easy to talk every day and hang out more often.
                 </p>
                 <div class="mainpage__actions actions-mainpage">
-                    <a class="actions-mainpage__download button" href="//discord.com/api/download?platform=win">
+                    <a class="actions-mainpage__download button download"
+                        href="//discord.com/api/download?platform=win">
                         <svg width="24" height="24" viewBox="0 0 24 24" class="icon-nuGd5b">
                             <g fill="currentColor">
                                 <path
@@ -159,7 +160,7 @@
                                 </path>
                             </g>
                         </svg>
-                        <span>Download for Windows</span>
+                        <span>Download for </span> <!-- provide it through js -->
                     </a>
                     <button class="actions-mainpage__button button button--black">Open Discord in your browser</button>
                 </div>
@@ -219,10 +220,10 @@
         </div>
     </section>
 
-    <section>
+    <section data-aos="fade-up">
         <div class="last-message">
             <h3 class="last-message__title">Ready to start your journey?</h3>
-            <button class="last-message__button button button--blue">
+            <a href="#" class="last-message__button button button--blue download">
                 <svg width="24" height="24" viewBox="0 0 24 24" class="icon-2tQ9Jt">
                     <g fill="white">
                         <path
@@ -233,8 +234,8 @@
                         </path>
                     </g>
                 </svg>
-                <span>Download for Linux</span>
-            </button>
+                <span>Download for </span> <!-- provide it through js -->
+            </a>
         </div>
     </section>
 
@@ -511,6 +512,33 @@
             Body.classList.toggle('no-scroll');
         });
 
+
+
+
+        const userAgent = navigator.userAgent;
+        let os;
+
+        if (userAgent.indexOf("Windows") !== -1) {
+            os = "Windows";
+        } else if (userAgent.indexOf("Mac") !== -1) {
+            os = "Mac OS";
+        } else if (userAgent.indexOf("Linux") !== -1) {
+            os = "Linux";
+        } else {
+            os = "Unknown";
+        }
+        console.log([...document.getElementsByClassName('download')].forEach((e) => {
+            console.log(e.childNodes[3].appendChild(document.createTextNode(os)))
+            if (os == "Windows") {
+                e.href = "//discord.com/api/download?platform=win";
+            } else if (os == "Mac OS") {
+                e.href = "//discord.com/api/download?platform=osx";
+            } else if (os == "Linux") {
+                e.href = "//discord.com/api/download?platform=linux";
+            } else {
+                e.href = "//discord.com/api/download?platform=win";
+            }
+        }))
 
     </script>
 </body>
