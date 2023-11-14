@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 @import url("reset.css");
 @import url("header.css");
+@import url("home.css");
 
 body {
     font-family: "gg sans", "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -35,7 +36,44 @@ body {
     height: 100%;
 }
 
-.container,
+.button {
+    display: inline-flex;
+    flex-direction: row;
+    margin: 0;
+    color: #23272a;
+    background-color: white;
+    border-radius: 28px;
+    font-size: 14px;
+    padding: 16px 32px;
+    font-weight: 500;
+    align-items: center;
+    gap: 8px;
+    height: 56px;
+    justify-content: center;
+    transition: color .2s ease, box-shadow .2s ease;
+}
+
+.button:hover {
+    color: #5865f2;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, .2);
+}
+
+.button.button--black {
+    color: white;
+    background-color: #23272a;
+}
+
+.button.button--blue {
+    color: white;
+    background-color: #5865f2;
+}
+
+.button.button--blue:hover {
+    color: #5865f2;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, .2);
+}
+
+
 .container2 {
     padding: 120px 40px;
     align-items: center;

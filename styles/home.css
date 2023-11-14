@@ -1,0 +1,92 @@
+.home {
+    background-image: url('../img/background-main/left.svg'), url('../img/background-main/right.svg'), url('../img/background-main/full.svg');
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-position: bottom left -330px, bottom right -330px;
+    background-color: #404eed;
+    min-height: 626px
+}
+
+.mainpage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 780px;
+    margin: 56px auto;
+    text-align: center;
+}
+
+.mainpage__title {
+    text-align: center;
+    font-family: "ABC Ginto Nord", "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: clamp(28px, 5vw, 44px);
+    font-weight: 900;
+    color: white;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+}
+
+.mainpage__desc {
+    font-size: clamp(16px, 2vw, 20px);
+    color: white;
+    line-height: 1.625;
+    margin-bottom: 24px;
+}
+
+.actions-mainpage {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+
+@media (max-width: 1024px) {
+    .home {
+        background-image: url('../img/background-main/right.svg'), url('../img/background-main/full.svg');
+        background-position: bottom right -330px;
+    }
+
+    .mainpage {
+        align-items: start;
+        text-align: left;
+        max-width: 565px;
+        margin: 56px auto 56px 10px;
+    }
+
+    .actions-mainpage {
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: start;
+    }
+}
+
+@media (max-width: 768px) {
+    .home {
+        background-image: url('../img/background-main/left.svg');
+        background-position: bottom left -50px;
+        min-height: 768;
+    }
+
+    .mainpage {
+        align-items: start;
+        text-align: start;
+        max-width: none;
+        margin: 56px auto 322px;
+    }
+
+    .actions-mainpage {
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .home {
+        background-image: url('../img/background-main/left.svg');
+        background-position: bottom;
+    }
+
+    .mainpage {
+        margin: 16px auto 322px;
+    }
+}
