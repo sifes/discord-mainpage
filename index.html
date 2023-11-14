@@ -11,8 +11,7 @@
 </head>
 
 <body>
-
-
+    <!--- home page --->
     <div class="home">
         <header class="header">
             <a href="#" class="header__logo logo">
@@ -168,7 +167,11 @@
             </div>
         </div>
     </div>
+    <!---// home page -->
 
+    <!--- sections with description --->
+
+    <!---1 section (default) --->
     <section class="grey" data-aos="fade-up">
         <div class="container">
             <div class="sections-wrapper">
@@ -181,7 +184,9 @@
             </div>
         </div>
     </section>
+    <!---// 1 section --->
 
+    <!--- 2 section --->
     <section data-aos="fade-up">
         <div class="container">
             <div class="sections-wrapper">
@@ -194,7 +199,9 @@
             </div>
         </div>
     </section>
+    <!---// 2 section (default)--->
 
+    <!--- 3 section --->
     <section class="grey" data-aos="fade-up">
         <div class="container">
             <div class="sections-wrapper">
@@ -207,7 +214,9 @@
             </div>
         </div>
     </section>
+    <!---// 3 section (default) --->
 
+    <!---4 section (without flex)--->
     <section data-aos="fade-up">
         <div class="container">
             <div class="sections-wrapper sections-wrapper--footer">
@@ -220,7 +229,9 @@
             </div>
         </div>
     </section>
+    <!---// 4 section --->
 
+    <!---5 section (last message)--->
     <section>
         <div class="last-message">
             <h3 class="last-message__title">Ready to start your journey?</h3>
@@ -239,7 +250,11 @@
             </a>
         </div>
     </section>
+    <!---5 section --->
 
+    <!---// sections with description --->
+
+    <!--- footer --->
     <footer>
         <div class="footer-nav">
             <div class="socials">
@@ -492,14 +507,16 @@
             <a class="button button--blue" href="https://discord.com/channels/@me">Sign up</a>
         </div>
     </footer>
-
+    <!---// footer --->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
+        // AOS animations
         AOS.init({
             offset: 400,
             duration: 1000
         });
 
+        // Burger logic
         const Burger = document.getElementsByClassName('burger')[0];
         const Navbar = document.getElementsByClassName('navbar-mobile')[0];
         const CloseNavbar = document.getElementsByClassName('navbar-mobile__close')[0];
@@ -513,9 +530,7 @@
             Body.classList.toggle('no-scroll');
         });
 
-
-
-
+        // Logic for different OS (link for different download links and text for buttons)
         const userAgent = navigator.userAgent;
         let os;
 
